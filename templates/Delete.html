@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      
+    <title>Remove Stock</title>
+</head>
+<body>
+    {% block body %}
+    <br>
+    <br>
+    <br>
+    <center>
+        <form method="POST">
+            {% csrf_token %}
+            <h3>Are You sure to Remove this item?</h3>
+            <br>
+            <button class="btn btn-warning">Yes, Remove stock</button>
+        </form>
+    </center>
+</body>
+{% endblock %}
+</html>

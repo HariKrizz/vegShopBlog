@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>shee | Stock Details</title>
+</head>
+<!-- body -->
+
+<body class="main-layout">
+  {% block body %}
+    
+{% for i in veggie %}                           
+      <div class="full testimonial_cont ">
+          <div class="row">
+              <div class="col-sm-1 col-sm-2 col-sm-4 pa_right">
+                  <div class="testomonial_img">
+                      <figure><img src= {{i.Image.url}} alt="#"/></figure>
+                  </div>
+              </div>
+              <div class="col-sm-1 col-sm-4 col-sm-4 pa_left">
+                  <div class="cross_inner">
+                      <h3><b>{{i.Name}}</b><br><strong class="ornage_color">₹ {{i.Price}}/kg</strong></h3>
+                      <p> Fresh stock of <b>{{i.Name}}</b> has arrived. Available Quantity is <b>{{i.Quantity}} kg.</b>
+                        <br>
+                        <br>  
+                      <a class="btn btn-warning" href="{% url 'details' i.id %}" >Edit {{i.Name}} </a>
+                    </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  {% endfor %}
+
+    <!--  footer -->
+    <footr>
+      <div class="footer ">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+             <a href="#" class="logo_footer"> <img src="{% static 'images/logo2.png' %}" alt="#"/></a>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+              <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 ">
+                  <div class="address">
+                    <h3>Address </h3>
+                    <ul class="loca">
+                      <li>
+                        <a href="#"></a>It is a long established fact 
+                        <br>that a reader will be  </li>
+                        <li>
+                          <a href="#"></a>(+71 1234567890) </li>
+                          <li>
+                            <a href="#"></a>demo@gmail.com</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="address">
+                          <h3>Social Link</h3>
+                          <ul class="Menu_footer">
+                            <li class="active"> <a href="#">Twitter</a> </li>
+                            <li><a href="#">Facebook</a> </li>
+                            <li><a href="#">Instagram</a> </li>
+                            <li><a href="#">Linkedin</a> </li>
+                          </ul>
+                        </div>
+                      </div>
+                     
+
+                      <div class="col-lg-4 col-md-6 col-sm-6 ">
+                        <div class="address">
+                          <h3>Newsletter</h3>
+                           <form class="news">
+                           <input class="newslatter" placeholder="Enter your email" type="text" name=" Enter your email">
+                            <button class="submit">Subscribe</button>
+                            </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="copyright">
+                <div class="container">
+                  <p>Copyright © 2021 Design by <a href="https://html.design/">HTML Templates </a></p>
+                </div>
+              </div>
+            </div>
+          </footr>
+          <!-- end footer -->
+          <!-- Javascript files-->
+          <script src="{% static 'js/jquery.min.js' %}"></script>
+          <script src="{% static 'js/popper.min.js' %}"></script>
+          <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+          <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+          <script src="{% static 'js/plugin.js' %}"></script>
+          <!-- sidebar -->
+          <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+          <script src="{% static 'js/custom.js' %}"></script>
+          <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+          <script>
+// This example adds a marker to indicate the position of Bondi Beach in Sydney,
+// Australia.
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 11,
+    center: {
+      lat: 40.645037,
+      lng: -73.880224
+    },
+  });
+
+  var image = 'images/maps-and-flags.png';
+  var beachMarker = new google.maps.Marker({
+    position: {
+      lat: 40.645037,
+      lng: -73.880224
+    },
+    map: map,
+    icon: image
+  });
+}
+</script>
+<!-- google map js -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+<!-- end google map js -->
+{% endblock %}
+</body>
+
+</html>

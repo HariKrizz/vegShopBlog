@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+     <!-- basic -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- mobile metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!-- site metas -->
+  <title>shree | Add Item</title>
+  
+    </head>
+    <body class="main-layout"> 
+        {% block body %}
+        <center>
+            <br>
+           
+            <br>
+            <div class="container-fluid col-5">
+                <div class="row-cols-md-0 bg-gradient">
+                  <h2 style="font-weight: bold; font-size: 46px; color: rgb(22, 161, 22)"> Add Vegetables</h2>
+                    <form  class="pb-lg-4 shadow-lg" method="POST" enctype="multipart/form-data">
+                        <br>
+                        <br>
+                        {% csrf_token %}
+                        <label for="Name" class="col-sm-2 col-form-label">Name</label>
+                        <input type="text" name="name" placeholder="Name">
+                        <br>   
+                        <br>    
+                        <label for="Description" class="col-sm-2 col-form-label">Quantity</label>
+                        <input type="text" name="quantity" placeholder="Quantity in Kilograms">
+                        <br>
+                        <br>
+                        <label for="Image" class="col-sm-2 col-form-label">Image</label>
+                        <input type="file" name="image" placeholder="Image" >
+                        <br>
+                        <br>
+                        <label for="Price" class="col-sm-2 col-form-label">Price (₹)</label>
+                        <input type="text" name="price" placeholder="Price">
+                        <br>
+                        <br>
+                        <button class="btn btn-success">Add Vegetables</button>
+                    </form>
+                </div>
+            </div>
+        </center>
+        {% endblock %}
+    </body>
+</html>
